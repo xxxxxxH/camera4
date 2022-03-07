@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/slimming_pv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerInside" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="14dp"
+            android:scaleType="center"
+            android:src="@mipmap/user" />
+    </RelativeLayout>
+
+
+
+
+    <!--    slimming-->
+    <LinearLayout
+        android:id="@+id/option_sli"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/cancel_black" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Slimming"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/save"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/confirm_black" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ECECEC" />
+
+        <TextView
+            android:id="@+id/currentProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:text="50"
+            android:visibility="gone"
+            android:textColor="#000"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingHorizontal="24dp">
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <SeekBar
+                android:id="@+id/activityActionTvBottomActionSlimmingSb"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:max="100"
+                android:maxHeight="6dp"
+                android:progress="50"
+                android:progressDrawable="@drawable/seek_bar_bg"
+                android:splitTrack="false"
+                android:thumb="@drawable/seek_bar_thumb" />
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="100"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="6dp"
+            android:paddingTop="16dp">
+
+            <TextView
+                android:id="@+id/activityActionTvBottomActionSlimming"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/app_activity_action_slimming"
+                android:drawableTint="@color/tint_black_desc"
+                android:gravity="center"
+                android:text="slimming"
+                android:textColor="@color/tint_black_desc"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/activityActionTvBottomActionWaist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/app_activity_action_waist"
+                android:drawableTint="@color/tint_black_desc"
+                android:gravity="center"
+                android:text="waist"
+                android:textColor="@color/tint_black_desc"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/activityActionTvBottomActionLegs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/app_activity_action_legs"
+                android:drawableTint="@color/tint_black_desc"
+                android:gravity="center"
+                android:text="legs"
+                android:textColor="@color/tint_black_desc"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/activityActionTvBottomActionLegsLength"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/app_activity_action_legs_length"
+                android:drawableTint="@color/tint_black_desc"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="legs length"
+                android:textColor="@color/tint_black_desc"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/activityActionTvBottomActionBreast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/app_activity_action_breast"
+                android:drawableTint="@color/tint_black_desc"
+                android:gravity="center"
+                android:text="breast"
+                android:textColor="@color/tint_black_desc"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/activityActionTvBottomActionShoulder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/app_activity_action_shoulder"
+                android:drawableTint="@color/tint_black_desc"
+                android:gravity="center"
+                android:text="shoulder"
+                android:textColor="@color/tint_black_desc"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.sweetcam.app.view.topon.TopOnBannerAdView
+        android:id="@+id/ad1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+</LinearLayout>

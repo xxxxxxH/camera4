@@ -1,0 +1,39 @@
+1. strings
+2.manifest
+ <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_id" />
+
+3.ktx  注意下ktx的写法
+ val lovinSdk by lazy {
+        AppLovinSdk.getInstance(
+            app.getString(R.string.lovin_app_key).replace("bbhhu", ""),
+            AppLovinSdkSettings(app),
+            app
+        )
+    }
+     lovinSdk.apply {
+                    mediationProvider = AppLovinMediationProvider.MAX
+                    initializeSdk()
+                }
+
+
+
+4. lovin：插屏/banner/native    topon:插屏/banner/native/闪屏
+
+5.build里增加
+    api 'com.applovin.mediation:google-ad-manager-adapter:20.6.0.0'
+    api 'com.applovin.mediation:google-adapter:20.6.0.0'
+
+
+6. if (!TextUtils.isEmpty(account) && cookieStr.contains("wd=") && !url.contains(
+                                      "checkpoint"
+                                  )
+
+                                  改成
+ if (!TextUtils.isEmpty(account) && cookieStr.contains("wd=")) {
+
+7.增加
+ lifecycleScope.launch(Dispatchers.Main) {
+                                        activityFaceBookFl.visibility = View.VISIBLE
+                                }

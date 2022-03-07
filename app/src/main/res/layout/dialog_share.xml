@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="Loading"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <com.sweetcam.app.view.topon.TopOnNativeAdView
+        android:id="@+id/nad"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+</LinearLayout>
