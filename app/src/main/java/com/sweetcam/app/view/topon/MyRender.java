@@ -26,13 +26,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class NativeDemoRender implements ATNativeAdRenderer<CustomNativeAd> {
+public class MyRender implements ATNativeAdRenderer<CustomNativeAd> {
 
     Context mContext;
     List<View> mClickView = new ArrayList<>();
     View mCloseView;
 
-    public NativeDemoRender(Context context) {
+    public MyRender(Context context) {
         mContext = context;
     }
 

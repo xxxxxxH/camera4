@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.activity.AnimActivity">
-
+    tools:context=".ui.activity.SlimmingAct">
     <RelativeLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2">
 
-        <com.github.chrisbanes.photoview.PhotoView
-            android:id="@+id/slimming_pv"
+        <com.shehuan.niv.NiceImageView
+            android:id="@+id/ageMainIv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:scaleType="centerInside" />
+            android:layout_height="match_parent" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="14dp"
-            android:scaleType="center"
-            android:src="@mipmap/user" />
+        <com.lcw.library.stickerview.StickerLayout
+            android:id="@+id/sticker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </RelativeLayout>
 
     <LinearLayout
@@ -63,7 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Cartoons"
+                    android:text="Age"
                     android:textColor="#000000"
                     android:textSize="16sp" />
             </RelativeLayout>
@@ -87,12 +83,18 @@
             android:layout_height="1dp"
             android:background="#ECECEC" />
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
+        <LinearLayout
+            android:id="@+id/option"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="4"
+            android:orientation="horizontal"/>
 
 
     </LinearLayout>
+
+    <com.sweetcam.app.view.topon.TopOnBannerAdView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
 </LinearLayout>

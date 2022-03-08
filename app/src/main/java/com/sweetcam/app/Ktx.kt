@@ -30,21 +30,9 @@ class Ktx private constructor(application: Application) {
 
     val app = application
 
-    val lovinSdk by lazy {
-        AppLovinSdk.getInstance(
-            app.getString(R.string.lovin_app_key).replace("bbhhu", ""),
-            AppLovinSdkSettings(app),
-            app
-        )
-    }
-
     fun initStartUp() {
         measureTimeMillis {
             MMKV.initialize(app)
-            lovinSdk.apply {
-                mediationProvider = AppLovinMediationProvider.MAX
-                initializeSdk()
-            }
             initOther()
         }.let {
             "application initTime -> ${it}".loge()

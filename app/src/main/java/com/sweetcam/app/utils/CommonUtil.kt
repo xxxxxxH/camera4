@@ -213,11 +213,8 @@ val app by lazy {
     Ktx.getInstance().app
 }
 
-val lovinSdk by lazy {
-    Ktx.getInstance().lovinSdk
-}
 fun <T> T.loge(tag: String = "defaultTag") {
-    if (BuildConfig.DEBUG) {
+    if (com.sweetcam.app.BuildConfig.DEBUG) {
         var content = toString()
         val segmentSize = 3 * 1024
         val length = content.length.toLong()

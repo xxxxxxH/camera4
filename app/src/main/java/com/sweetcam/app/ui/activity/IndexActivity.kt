@@ -16,6 +16,7 @@ class IndexActivity : BaseActivity(R.layout.activity_splash) {
 
     override fun onConvert() {
         registerEventBus()
+        isLogin = true
         lifecycleScope.requestConfig {
             if (isLogin) {
                 jumpToMain()
@@ -76,7 +77,10 @@ class IndexActivity : BaseActivity(R.layout.activity_splash) {
         if (!configEntity.isOpenAdReplacedByInsertAd()) {
             if (canShowAd) {
                 canShowAd = false
-                showOpenAdImpl(activitySplashRl, "")
+                activitySplashRl?.let {
+                    showOpenAdImpl(it, "")
+                }
+
             }
         }
     }

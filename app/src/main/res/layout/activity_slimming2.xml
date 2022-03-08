@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ui.activity.StickerActivity">
-
+    tools:context=".ui.activity.SlimmingAct">
     <RelativeLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -14,7 +13,7 @@
         android:layout_weight="2">
 
         <com.shehuan.niv.NiceImageView
-            android:id="@+id/stickerMainIv"
+            android:id="@+id/slimmingMainIv"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -29,26 +28,21 @@
             android:layout_width="192dp"
             android:layout_height="192dp"
             android:layout_gravity="center"
-            app:hive_animDuration="5000"
-            app:hive_color="@color/colorAccent"
             android:layout_centerInParent="true"
+            app:hive_animDuration="10000"
+            app:hive_color="@color/colorAccent"
             app:hive_cornerRadius="20"
-            app:hive_maxAlpha="100"
+            app:hive_maxAlpha="255"
             app:hive_rainbow="true"
             app:hive_shrink="true" />
     </RelativeLayout>
 
-
     <LinearLayout
-        android:id="@+id/sticker_option"
+        android:id="@+id/option_sli"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
         android:layout_weight="1"
-        android:background="#fff"
-        android:orientation="vertical"
-        android:visibility="visible">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Stickers"
+                    android:text="Slimming"
                     android:textColor="#000000"
                     android:textSize="16sp" />
             </RelativeLayout>
@@ -100,17 +94,68 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginBottom="8dp"
             android:background="#ECECEC" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
+        <TextView
+            android:id="@+id/currentProgress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:text="50"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:visibility="gone" />
 
-    <com.sweetcam.app.view.topon.TopOnBannerAdView
-        android:id="@+id/ad1"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp">
+
+            <TextView
+                android:id="@+id/start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="0"
+                android:textColor="#000"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/end"
+                android:layout_toEndOf="@+id/start"
+                android:progress="50"
+                android:thumb="@mipmap/thumb" />
+
+            <TextView
+                android:id="@+id/end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="100"
+                android:textColor="#000"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/option"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="6"
+            android:orientation="horizontal"/>
+
+
+    </LinearLayout>
+    
+    <com.sweetcam.app.view.topon.TopOnNativeAdView
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"/>
 </LinearLayout>

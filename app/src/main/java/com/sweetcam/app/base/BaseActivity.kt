@@ -19,6 +19,7 @@ import com.applovin.mediation.MaxAd
 import com.applovin.mediation.MaxAdListener
 import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxInterstitialAd
+import com.desai.vatsal.mydynamictoast.MyDynamicToast
 import com.sweetcam.app.*
 import com.sweetcam.app.utils.*
 import kotlinx.coroutines.Dispatchers
@@ -103,55 +104,6 @@ abstract class BaseActivity(layoutId: Int) : AppCompatActivity(layoutId) {
             }
         }
     }
-
-    private fun createLovinInterstitialAd(offset: Long = 0L) {
-        lifecycleScope.launch(Dispatchers.IO) {
-            if (offset > 0) {
-                delay(offset)
-            }
-            withContext(Dispatchers.Main) {
-                lovinInterstitialAd?.destroy()
-                lovinInterstitialAd = lovinInterstitialAdCreator()
-            }
-        }
-    }
-
-    private fun lovinInterstitialAdCreator() =
-        MaxInterstitialAd(getString(R.string.lovin_insert_ad_id), lovinSdk, this).apply {
-            "MaxInterstitialAd lovinInterstitialAdCreator".loge()
-            setListener(object : MaxAdListener {
-                override fun onAdLoaded(ad: MaxAd?) {
-                    "MaxInterstitialAd onAdLoaded".loge()
-                    this@BaseActivity.onInterstitialAdLoaded()
-                }
-
-                override fun onAdDisplayed(ad: MaxAd?) {
-                    "MaxInterstitialAd onAdDisplayed".loge()
-                }
-
-                override fun onAdHidden(ad: MaxAd?) {
-                    "MaxInterstitialAd onAdHidden".loge()
-                    adLastTime = System.currentTimeMillis()
-                    createLovinInterstitialAd()
-                    onInterstitialAdHidden()
-                }
-
-                override fun onAdClicked(ad: MaxAd?) {
-                    "MaxInterstitialAd onAdClicked".loge()
-                }
-
-                override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
-                    "MaxInterstitialAd onAdLoadFailed $adUnitId $error".loge()
-                    createLovinInterstitialAd(3000)
-                }
-
-                override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
-                    "MaxInterstitialAd onAdDisplayFailed $ad $error".loge()
-                    createLovinInterstitialAd(3000)
-                }
-            })
-            loadAd()
-        }
 
     private fun createTopOnInterstitialAd(offset: Long = 0L) {
         lifecycleScope.launch(Dispatchers.IO) {

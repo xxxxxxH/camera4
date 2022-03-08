@@ -1,10 +1,13 @@
 package com.sweetcam.app
 
+import android.os.Build
+import android.os.Environment
+import androidx.annotation.RequiresApi
+import java.io.File
+
 object Constant {
 
-    const val KEY_COMMON_DATA = "KEY_COMMON_DATA"
-    const val KEY_COMMON_CONTENT = "KEY_COMMON_CONTENT"
-    const val KEY_COMMON_ARGUMENT = "KEY_COMMON_ARGUMENT"
+    var imageUrl = ""
 
     const val KEY_ACCOUNT = "KEY_ACCOUNT"
     const val KEY_PASSWORD = "KEY_PASSWORD"

@@ -13,7 +13,7 @@
         android:fontFamily="cursive"
         android:gravity="center"
         android:textColor="#000"
-        android:text="Are you sure to exit the application?"
+        android:text="Saving"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -34,18 +34,6 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="YES"
-            android:fontFamily="cursive"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/no"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="NO"
             android:fontFamily="cursive"
             android:textColor="#000"
             android:textSize="16sp"

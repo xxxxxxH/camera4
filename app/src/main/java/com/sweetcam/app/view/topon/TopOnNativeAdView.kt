@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import com.anythink.core.api.ATAdConst
 import com.anythink.core.api.AdError
 import com.anythink.nativead.api.ATNative
 import com.anythink.nativead.api.ATNativeAdView
@@ -34,7 +33,7 @@ class TopOnNativeAdView @JvmOverloads constructor(
     private var atNative: ATNative? = null
 
     private val render by lazy {
-        NativeDemoRender(context)
+        MyRender(context)
     }
 
     private val atNativeAdView by lazy {
