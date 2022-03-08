@@ -7,32 +7,20 @@
     tools:context=".ui.activity.StickerActivity">
 
     <RelativeLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2">
 
-        <com.sweetcam.app.view.paster.PasterView
-            android:id="@+id/sticker_view"
+       <com.shehuan.niv.NiceImageView
+           android:id="@+id/stickerMainIv"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"/>
+
+        <com.lcw.library.stickerview.StickerLayout
+            android:id="@+id/sticker"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:visibility="visible">
-
-            <com.github.chrisbanes.photoview.PhotoView
-                android:id="@+id/show_edit_iv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerInside"/>
-        </com.sweetcam.app.view.paster.PasterView>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="14dp"
-            android:scaleType="center"
-            android:src="@mipmap/user" />
+            android:layout_height="match_parent"/>
     </RelativeLayout>
 
 
