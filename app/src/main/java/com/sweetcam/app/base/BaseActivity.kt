@@ -40,7 +40,7 @@ abstract class BaseActivity(layoutId: Int) : AppCompatActivity(layoutId) {
         //用Lovin的插屏
 //        createLovinInterstitialAd()
         //用TopOn的插屏
-//        createTopOnInterstitialAd()
+        createTopOnInterstitialAd()
         createOpenAd()
         onConvert()
     }
@@ -67,31 +67,31 @@ abstract class BaseActivity(layoutId: Int) : AppCompatActivity(layoutId) {
     }
 
     //要不要闪屏
-//    override fun onStop() {
-//        super.onStop()
-//        isBackground = isInBackground()
-//    }
-//
-//    override fun onResume() {
-//        super.onResume()
-//        if (isBackground) {
-//            isBackground = false
-//            val content = findViewById<ViewGroup>(android.R.id.content)
-//            (content.getTag(R.id.open_ad_view_id) as? FrameLayout)?.let {
-//                showOpenAd(it)
-//            } ?: kotlin.run {
-//                FrameLayout(this).apply {
-//                    layoutParams = FrameLayout.LayoutParams(
-//                        ViewGroup.LayoutParams.MATCH_PARENT,
-//                        ViewGroup.LayoutParams.MATCH_PARENT
-//                    )
-//                    content.addView(this)
-//                    content.setTag(R.id.open_ad_view_id, this)
-//                    showOpenAd(this)
-//                }
-//            }
-//        }
-//    }
+    override fun onStop() {
+        super.onStop()
+        isBackground = isInBackground()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (isBackground) {
+            isBackground = false
+            val content = findViewById<ViewGroup>(android.R.id.content)
+            (content.getTag(R.id.open_ad_view_id) as? FrameLayout)?.let {
+                showOpenAd(it)
+            } ?: kotlin.run {
+                FrameLayout(this).apply {
+                    layoutParams = FrameLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT
+                    )
+                    content.addView(this)
+                    content.setTag(R.id.open_ad_view_id, this)
+                    showOpenAd(this)
+                }
+            }
+        }
+    }
 
     private fun createOpenAd(offset: Long = 0L) {
         lifecycleScope.launch(Dispatchers.IO) {

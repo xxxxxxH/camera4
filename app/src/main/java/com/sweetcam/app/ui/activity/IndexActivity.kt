@@ -16,7 +16,6 @@ class IndexActivity : BaseActivity(R.layout.activity_splash) {
 
     override fun onConvert() {
         registerEventBus()
-        isLogin = true
         lifecycleScope.requestConfig {
             if (isLogin) {
                 jumpToMain()

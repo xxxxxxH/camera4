@@ -75,32 +75,27 @@ class MainActivity : BaseActivity(R.layout.act_main), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.sticker -> {
-                val a = showInsertAd()
-                if (!a) {
+                if (!showInsertAd(tag = "inter_filter")) {
                     selectImageWithAlbum(StickerActivity::class.java)
                 }
             }
             R.id.slimming -> {
-                val a = showInsertAd()
-                if (a) {
+                if (!showInsertAd(tag = "inter_slim")) {
                     selectImageWithAlbum(SlimmingAct::class.java)
                 }
             }
             R.id.cartoon -> {
-                val a = showInsertAd()
-                if (a) {
+                if (!showInsertAd()) {
                     selectImageWithAlbum(CartoonAct::class.java)
                 }
             }
             R.id.age -> {
-                val a = showInsertAd()
-                if (a) {
+                if (!showInsertAd()) {
                     selectImageWithAlbum(AgeAct::class.java)
                 }
             }
             R.id.mainCamera -> {
-                val a = showInsertAd()
-                if (a) {
+                if (!showInsertAd(tag = "inter_camera")) {
                     takePhoto()
                 }
             }
