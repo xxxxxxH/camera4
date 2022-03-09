@@ -15,12 +15,7 @@ import com.anythink.interstitial.api.ATInterstitialExListener
 import com.anythink.splashad.api.ATSplashAd
 import com.anythink.splashad.api.ATSplashAdListener
 import com.anythink.splashad.api.IATSplashEyeAd
-import com.applovin.mediation.MaxAd
-import com.applovin.mediation.MaxAdListener
-import com.applovin.mediation.MaxError
-import com.applovin.mediation.ads.MaxInterstitialAd
-import com.desai.vatsal.mydynamictoast.MyDynamicToast
-import com.sweetcam.app.*
+import com.sweetcam.app.R
 import com.sweetcam.app.utils.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -31,14 +26,11 @@ import org.greenrobot.eventbus.EventBus
 abstract class BaseActivity(layoutId: Int) : AppCompatActivity(layoutId) {
 
     private var isBackground = false
-    private var lovinInterstitialAd: MaxInterstitialAd? = null
     private var topOnInterstitialAd: ATInterstitial? = null
     private var openAd: ATSplashAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //用Lovin的插屏
-//        createLovinInterstitialAd()
         //用TopOn的插屏
         createTopOnInterstitialAd()
         createOpenAd()
@@ -212,12 +204,6 @@ abstract class BaseActivity(layoutId: Int) : AppCompatActivity(layoutId) {
 
 
     private fun showInsertAdImpl(tag: String = ""): Boolean {
-        lovinInterstitialAd?.let {
-            if (it.isReady) {
-                it.showAd(tag)
-                return true
-            }
-        }
         topOnInterstitialAd?.let {
             if (it.isAdReady) {
                 it.show(this)
