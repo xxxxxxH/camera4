@@ -35,10 +35,7 @@
         <activity
             android:name=".ui.activity.SlimmingAct"
             android:exported="false" />
-        <activity
-            android:name=".ui.activity.AllImageAct"
-            android:exported="false" />
-
+        
         <meta-data
             android:name="ScopedStorage"
             android:value="true" />

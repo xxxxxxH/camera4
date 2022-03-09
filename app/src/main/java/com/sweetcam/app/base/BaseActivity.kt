@@ -58,7 +58,6 @@ abstract class BaseActivity(layoutId: Int) : AppCompatActivity(layoutId) {
         }.bindWithLifecycle(this)
     }
 
-    //要不要闪屏
     override fun onStop() {
         super.onStop()
         isBackground = isInBackground()
